@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* ===== GAYATHMI portfolio. BOLD terracotta + black. Hard edges. ===== */
+@theme {
+  --color-ink: #0a0a0a;         /* black */
+  --color-coal: #141210;        /* off-black panel */
+  --color-terra: #d8531f;       /* BOLD terracotta */
+  --color-terra-deep: #a63c12;  /* deeper terracotta */
+  --color-bone: #f4ece1;        /* off-white */
+  --color-ash: #8f857b;         /* muted (used sparingly) */
+  --color-line: #2c2622;        /* hairline on dark */
+
+  --font-display: var(--font-archivo-black);
+  --font-body: var(--font-grotesk);
+}
+
+* { -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.86;
+}
+.label {
+  font-family: var(--font-body), monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+}
+
+.marquee { animation: marquee 22s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee { animation: none; }
+  * { animation: none !important; transition: none !important; }
+}
